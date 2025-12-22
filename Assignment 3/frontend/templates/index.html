@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+</head>
+
+<body>
+    <p>Hi, welcome to the Registration Page</p>
+    <p>Today is a {{ day_of_week }}</p>
+    <p>The Time is {{ current_time }}</p>
+    
+    <div class="centred">
+    
+        <form action="/submit" method="POST">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter your name">
+            
+            <br>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email">
+            <br>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter your password">
+            <br>
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm your password">
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        <a href="/get_data"><button>Submitted Data</button></a>
+        
+    </div>
+</body>
+<style>
+    body {
+        background-color: whitesmoke;
+    }
+    
+    p {
+        text-align: center;
+        font-size: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+    }
+</style>
+</html>

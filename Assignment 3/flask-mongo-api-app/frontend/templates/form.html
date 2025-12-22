@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h2>Student Submission Form</h2>
+
+{% if error %}
+    <p class="error">Error: {{ error }}</p>
+{% endif %}
+
+<form method="POST">
+    <label>Name:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
