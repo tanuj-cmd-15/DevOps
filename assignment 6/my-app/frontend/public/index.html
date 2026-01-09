@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS ECS Demo Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 AWS ECS Demo Application</h1>
+            <p class="subtitle">Flask Backend + Express Frontend</p>
+        </header>
+
+        <div class="status-section">
+            <h2>System Status</h2>
+            <div class="status-card" id="backendStatus">
+                <div class="status-indicator"></div>
+                <span>Checking backend...</span>
+            </div>
+        </div>
+
+        <div class="data-section">
+            <h2>User Data from Backend</h2>
+            <button onclick="fetchData()" class="btn">Fetch Data</button>
+            <div id="dataDisplay" class="data-display"></div>
+        </div>
+
+        <footer>
+            <p>Deployed on AWS ECS with ECR and VPC</p>
+        </footer>
+    </div>
+
+    <script>
+        async function checkBackendHealth() {
+            try {
+                const response = await fetch('/api/proxy/health');
+                const data = await response.json();
+                const statusCard = document.getElementById('backendStatus');
+                
+                if (data.status === 'healthy') {
+                    statusCard.innerHTML = `
+                        <div class="status-indicator active"></div>
+                        <span>Backend: <strong>Online</strong></span>
+                    `;
+                }
+            } catch (error) {
+                const statusCard = document.getElementById('backendStatus');
+                statusCard.innerHTML = `
+                    <div class="status-indicator error"></div>
+                    <span>Backend: <strong>Offline</strong></span>
+                `;
+            }
+        }
+
+        async function fetchData() {
+            const display = document.getElementById('dataDisplay');
+            display.innerHTML = '<p class="loading">Loading...</p>';
+            
+            try {
+                const response = await fetch('/api/proxy/data');
+                const data = await response.json();
+                
+                if (data.users) {
+                    let html = '<div class="user-grid">';
+                    data.users.forEach(user => {
+                        html += `
+                            <div class="user-card">
+                                <h3>${user.name}</h3>
+                                <p class="role">${user.role}</p>
+                                <p class="user-id">ID: ${user.id}</p>
+                            </div>
+                        `;
+                    });
+                    html += '</div>';
+                    display.innerHTML = html;
+                }
+            } catch (error) {
+                display.innerHTML = `<p class="error">Error: ${error.message}</p>`;
+            }
+        }
+
+        // Check backend health on page load
+        checkBackendHealth();
+        setInterval(checkBackendHealth, 10000); // Check every 10 seconds
+    </script>
+</body>
+</html>
