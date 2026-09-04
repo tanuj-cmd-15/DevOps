@@ -1,0 +1,71 @@
+================================================================================
+JENKINS CI/CD ASSIGNMENT - COMMAND REFERENCE
+EC2 IP: 65.1.100.135
+Date: September 4, 2026
+================================================================================
+
+APPLICATION URLS:
+- Flask Backend:     http://65.1.100.135:5000
+- Express Frontend:  http://65.1.100.135:3000
+- Jenkins:           http://65.1.100.135:8080
+
+================================================================================
+PHASE 1-5: COMPLETED ✓
+================================================================================
+
+SSH CONNECTION:
+ssh -i jenkins-cicd-key.pem ubuntu@65.1.100.135
+
+PM2 COMMANDS:
+pm2 status                           # Check all applications
+pm2 logs flask-backend               # View Flask logs
+pm2 logs express-frontend            # View Express logs
+pm2 restart flask-backend            # Restart Flask
+pm2 restart express-frontend         # Restart Express
+pm2 stop all                         # Stop all apps
+pm2 start all                        # Start all apps
+pm2 save                             # Save current state
+pm2 delete flask-backend             # Delete Flask process
+pm2 delete express-frontend          # Delete Express process
+
+JENKINS COMMANDS:
+sudo systemctl status jenkins        # Check Jenkins status
+sudo systemctl start jenkins         # Start Jenkins
+sudo systemctl stop jenkins          # Stop Jenkins
+sudo systemctl restart jenkins       # Restart Jenkins
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword  # Get initial password
+
+TESTING COMMANDS:
+curl http://localhost:5000/api/health          # Test Flask health
+curl http://localhost:3000/health              # Test Express health
+curl http://localhost:5000/api/items           # Get all items
+curl -X POST http://localhost:5000/api/items \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Test","description":"Test item"}'  # Create item
+
+USEFUL SYSTEM COMMANDS:
+sudo netstat -tlnp                   # Check all listening ports
+sudo netstat -tlnp | grep 5000       # Check Flask port
+sudo netstat -tlnp | grep 3000       # Check Express port
+sudo netstat -tlnp | grep 8080       # Check Jenkins port
+df -h                                # Check disk space
+free -m                              # Check memory
+top                                  # View processes
+
+GIT COMMANDS (from EC2):
+cd ~/apps/flask-backend
+git pull                             # Pull latest Flask code
+cd ~/apps/express-frontend
+git pull                             # Pull latest Express code
+
+================================================================================
+NEXT PHASES TO COMPLETE
+================================================================================
+
+PHASE 6: Jenkins Configuration
+PHASE 7: Create Jenkins Pipelines
+PHASE 8: Setup GitHub Webhooks
+PHASE 9: Testing & Documentation
+PHASE 10: Final Submission
+
+================================================================================

@@ -1,0 +1,316 @@
+================================================================================
+FINAL SUBMISSION CHECKLIST
+EC2 IP: 65.1.100.135
+Date: September 4, 2026
+================================================================================
+
+PHASE COMPLETION STATUS:
+========================
+
+✅ Phase 1: GitHub Setup
+   ✅ Created flask-backend repository
+   ✅ Created express-frontend repository
+   ✅ Pushed code to both repositories
+
+✅ Phase 2: EC2 Launch
+   ✅ Launched Ubuntu 22.04 instance
+   ✅ Configured security groups (ports: 22, 80, 3000, 5000, 8080)
+   ✅ Downloaded .pem key file
+
+✅ Phase 3: EC2 Connection
+   ✅ Connected via SSH
+
+✅ Phase 4: Dependencies Installation
+   ✅ Python 3 installed
+   ✅ Node.js 18 installed
+   ✅ PM2 installed
+   ✅ Git installed
+   ✅ Java 11 installed
+   ✅ Jenkins installed
+
+✅ Phase 5: Application Deployment
+   ✅ Flask deployed on port 5000
+   ✅ Express deployed on port 3000
+   ✅ Both running with PM2
+   ✅ PM2 configured to start on boot
+
+✅ Phase 6-9: Jenkins Setup
+   ✅ Jenkins unlocked and configured
+   ✅ Plugins installed
+   ✅ NodeJS tool configured
+   ✅ Flask pipeline created
+   ✅ Express pipeline created
+   ✅ Manual builds successful
+
+✅ Phase 10-11: Webhooks
+   ✅ Flask webhook configured
+   ✅ Express webhook configured
+   ✅ Automatic deployment tested
+
+✅ Phase 12: Testing
+   ✅ Automatic builds working
+   ✅ Applications updated via webhook
+   ✅ All endpoints responding
+
+================================================================================
+SCREENSHOT CHECKLIST (28 Required)
+================================================================================
+
+EC2 & Setup:
+□ 1.  GitHub repositories page
+□ 2.  EC2 instance details
+□ 3.  Security group inbound rules
+□ 4.  SSH connection successful
+□ 5.  System update in progress
+□ 6.  All dependencies installed with versions
+
+Application Deployment:
+□ 7.  Jenkins initial password shown
+□ 8.  PM2 showing Flask running
+□ 9.  Flask API response in terminal
+□ 10. PM2 showing both apps running
+□ 11. Flask API in browser (http://65.1.100.135:5000)
+□ 12. Express frontend in browser (http://65.1.100.135:3000)
+
+Jenkins Setup:
+□ 13. Jenkins unlock screen
+□ 14. Plugin installation in progress
+□ 15. Jenkins dashboard
+□ 16. Installed plugins page
+□ 17. NodeJS tool configuration
+□ 18. Flask pipeline configuration
+□ 19. Express pipeline configuration
+
+Pipeline Execution:
+□ 20. Flask manual build (Build #1)
+□ 21. Flask console output showing SUCCESS
+□ 22. Express manual build (Build #1)
+□ 23. Express console output showing SUCCESS
+
+Webhooks:
+□ 24. Flask webhook configuration on GitHub
+□ 25. Express webhook configuration on GitHub
+□ 26. Flask automatic build (Build #2)
+□ 27. Express automatic build (Build #2)
+
+Final:
+□ 28. All applications running successfully
+
+Bonus Screenshots:
+□ 29. Webhook delivery confirmation (green checkmark)
+□ 30. Jenkins dashboard with both pipelines successful
+□ 31. PM2 status showing both apps online
+□ 32. All three URLs open in browser tabs
+
+================================================================================
+DOCUMENTATION CHECKLIST
+================================================================================
+
+SUBMISSION_DOCUMENT.md:
+□ Your name filled in
+□ EC2 IP updated (65.1.100.135) ✅
+□ GitHub repository URLs updated
+□ All YOUR_USERNAME placeholders replaced
+□ Instance ID filled in
+□ Screenshots referenced
+□ Commands documented
+□ Challenges section filled out
+
+README.md:
+□ GitHub repository URLs updated
+□ EC2 IP updated where mentioned
+
+COMMANDS_REFERENCE.txt:
+□ Created with all important commands ✅
+
+================================================================================
+FILES TO INCLUDE IN ZIP
+================================================================================
+
+Root Level:
+✅ README.md
+✅ SUBMISSION_DOCUMENT.md
+✅ COMMANDS_REFERENCE.txt
+✅ FINAL_CHECKLIST.txt (this file)
+✅ PROJECT_SUMMARY.txt
+✅ .gitignore
+
+flask-backend/:
+✅ app.py
+✅ requirements.txt
+✅ Jenkinsfile
+✅ README.md
+
+express-frontend/:
+✅ server.js
+✅ package.json
+✅ Jenkinsfile
+✅ README.md
+✅ public/style.css
+✅ public/script.js
+✅ views/index.ejs
+✅ views/404.ejs
+
+scripts/:
+✅ setup-ec2.sh
+✅ deploy.sh
+✅ clone-repos.sh
+
+screenshots/:
+□ All 28+ screenshot files (add these!)
+
+================================================================================
+THINGS TO UPDATE BEFORE SUBMISSION
+================================================================================
+
+1. SUBMISSION_DOCUMENT.md:
+   □ Add your full name
+   □ Add your GitHub username in all URLs
+   □ Add EC2 Instance ID
+   □ Document any challenges you faced
+   □ Add description of what you learned
+
+2. Add Screenshots:
+   □ Place all screenshots in screenshots/ folder
+   □ Name them correctly (ec2-instance.png, flask-running.png, etc.)
+
+3. GitHub Repositories:
+   □ Ensure both repos are PUBLIC or accessible
+   □ Verify all code is pushed
+   □ Check Jenkinsfile is in both repos
+
+4. Test Everything One Final Time:
+   □ Flask: http://65.1.100.135:5000
+   □ Express: http://65.1.100.135:3000
+   □ Jenkins: http://65.1.100.135:8080
+   □ PM2: ssh to EC2 and run 'pm2 status'
+
+================================================================================
+FINAL SUBMISSION STEPS
+================================================================================
+
+Step 1: Complete Documentation
+□ Fill in your name in SUBMISSION_DOCUMENT.md
+□ Add your GitHub username
+□ Add Instance ID
+□ Write about challenges faced
+
+Step 2: Add All Screenshots
+□ Copy all screenshots to screenshots/ folder
+□ Verify you have at least 28 screenshots
+
+Step 3: Rename Folder
+□ Rename folder from "Final Assignment" to "Jenkins_CICD_YourName"
+   Example: "Jenkins_CICD_RahulSharma"
+
+Step 4: Create ZIP File
+□ Right-click the folder
+□ Send to → Compressed (zipped) folder
+□ OR use PowerShell:
+   Compress-Archive -Path "Jenkins_CICD_YourName" -DestinationPath "Jenkins_CICD_YourName.zip"
+
+Step 5: Verify ZIP
+□ Extract ZIP to a test folder
+□ Verify all files are present
+□ Check screenshots are viewable
+□ Ensure file size is reasonable (<50MB)
+
+Step 6: Submit
+□ Upload ZIP to submission portal
+□ Share GitHub repository links
+□ Confirm submission received
+
+================================================================================
+IMPORTANT REMINDERS
+================================================================================
+
+⚠️ DO NOT STOP YOUR EC2 INSTANCE until after grading!
+
+⚠️ Keep your GitHub repositories PUBLIC or grant access to tutors
+
+⚠️ Test everything one more time before submitting
+
+⚠️ Make sure no sensitive information (passwords, keys) in screenshots
+
+⚠️ Use .zip format only (NOT .rar or .7z)
+
+⚠️ Do NOT include node_modules or venv folders in submission
+
+================================================================================
+APPLICATION STATUS
+================================================================================
+
+Flask Backend:    http://65.1.100.135:5000    [Should be RUNNING]
+Express Frontend: http://65.1.100.135:3000    [Should be RUNNING]
+Jenkins:          http://65.1.100.135:8080    [Should be RUNNING]
+
+Test these URLs before submission!
+
+================================================================================
+GRADING CRITERIA
+================================================================================
+
+1. EC2 Deployment (30 points)
+   - Instance properly configured
+   - Applications accessible
+   - PM2 configured
+
+2. Jenkins CI/CD (40 points)
+   - Pipelines working
+   - Webhooks functional
+   - Automatic deployment
+
+3. Documentation (20 points)
+   - Complete and clear
+   - Screenshots included
+   - Commands documented
+
+4. Code Quality (10 points)
+   - Jenkinsfiles correct
+   - Applications work
+   - No errors
+
+Total: 100 points
+
+================================================================================
+ESTIMATED TIME TO COMPLETE REMAINING TASKS
+================================================================================
+
+- Add screenshots to folder: 15 minutes
+- Fill out SUBMISSION_DOCUMENT.md: 20 minutes
+- Update GitHub URLs: 5 minutes
+- Final testing: 10 minutes
+- Create ZIP and submit: 10 minutes
+
+TOTAL: ~60 minutes
+
+================================================================================
+CONTACT INFORMATION
+================================================================================
+
+If you have issues:
+- Check README.md troubleshooting section
+- Review error messages carefully
+- Contact your Tutedude mentor
+- Contact course instructor
+
+================================================================================
+YOU'RE ALMOST DONE! 🎉
+================================================================================
+
+You've completed all the technical work:
+✅ EC2 deployed
+✅ Applications running
+✅ Jenkins configured
+✅ Pipelines working
+✅ Webhooks active
+
+Remaining tasks:
+□ Take/organize screenshots
+□ Fill in your personal details
+□ Create ZIP file
+□ Submit!
+
+Good luck! 🚀
+
+================================================================================

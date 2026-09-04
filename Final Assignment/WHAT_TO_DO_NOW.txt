@@ -1,0 +1,272 @@
+================================================================================
+WHAT TO DO NOW - FINAL STEPS
+================================================================================
+
+CONGRATULATIONS! 🎉 All technical work is COMPLETE!
+
+Your applications are running:
+✅ Flask:   http://65.1.100.135:5000
+✅ Express: http://65.1.100.135:3000
+✅ Jenkins: http://65.1.100.135:8080
+
+✅ Pipelines working
+✅ Webhooks configured
+✅ Automatic deployment tested
+
+================================================================================
+REMAINING TASKS (About 1 hour)
+================================================================================
+
+TASK 1: Organize Your Screenshots (15 minutes)
+================================================
+
+You need to collect all the screenshots you took and put them in:
+   screenshots/ folder
+
+Required screenshots (at least 28):
+
+1. ec2-instance.png - EC2 instance details
+2. security-group.png - Security group rules
+3. ssh-connection.png - Terminal showing SSH
+4. dependencies-installed.png - All versions shown
+5. flask-running.png - PM2 Flask status
+6. express-running.png - PM2 Express status
+7. flask-browser.png - Flask API in browser
+8. express-browser.png - Express frontend in browser
+9. jenkins-unlock.png - Jenkins unlock screen
+10. jenkins-dashboard.png - Jenkins main page
+11. jenkins-plugins.png - Installed plugins
+12. jenkins-nodejs-config.png - NodeJS configuration
+13. flask-pipeline-config.png - Flask pipeline settings
+14. express-pipeline-config.png - Express pipeline settings
+15. flask-pipeline-build.png - Flask build page
+16. flask-console-output.png - Flask build logs
+17. express-pipeline-build.png - Express build page
+18. express-console-output.png - Express build logs
+19. flask-webhook.png - GitHub Flask webhook
+20. express-webhook.png - GitHub Express webhook
+21. flask-auto-deploy.png - Automatic Flask build
+22. express-auto-deploy.png - Automatic Express build
+23. pm2-status.png - PM2 showing both apps
+24. successful-deployment.png - All working together
+
+TIP: If you're missing any, you can take them now by visiting the URLs
+     and going through the screens again.
+
+
+TASK 2: Update SUBMISSION_DOCUMENT.md (20 minutes)
+===================================================
+
+Open: SUBMISSION_DOCUMENT.md
+
+Fill in these details:
+
+Line 7: Replace [Your Name] with your actual name
+   Example: **Student Name:** Rahul Sharma
+
+Line 21: Add your EC2 Instance ID
+   Find it in AWS Console → EC2 → Instances
+   Example: - **Instance ID:** i-0123456789abcdef0
+
+Replace all "YOUR_USERNAME" with your GitHub username:
+   - Search for: YOUR_USERNAME
+   - Replace with: your_actual_github_username
+   
+   Example: If your GitHub is "rahulsharma123"
+   Change: https://github.com/YOUR_USERNAME/flask-backend
+   To: https://github.com/rahulsharma123/flask-backend
+
+Line 950+: Fill in "Challenges Faced" section
+   Write about any problems you encountered and how you solved them
+   Example:
+   - "Initially, Flask wasn't accessible from browser due to security group"
+   - "Solved by adding port 5000 to inbound rules"
+
+Line 990+: Fill in "Lessons Learned" section
+   Write what you learned from this assignment
+
+
+TASK 3: Update README.md (5 minutes)
+====================================
+
+Open: README.md
+
+Update GitHub repository URLs:
+   Search for: <your-flask-repo-url>
+   Replace with: https://github.com/your_username/flask-backend
+
+   Search for: <your-express-repo-url>
+   Replace with: https://github.com/your_username/express-frontend
+
+
+TASK 4: Final Testing (10 minutes)
+===================================
+
+Test everything one last time:
+
+1. Open browser and test:
+   http://65.1.100.135:5000 - Should show Flask API info
+   http://65.1.100.135:3000 - Should show Express frontend
+   http://65.1.100.135:8080 - Should show Jenkins
+
+2. SSH to EC2 and check:
+   ssh -i jenkins-cicd-key.pem ubuntu@65.1.100.135
+   pm2 status
+   # Both apps should show "online"
+
+3. Test automatic deployment:
+   - Make a small change to Flask README on GitHub
+   - Push the change
+   - Check Jenkins - Build should start automatically
+
+
+TASK 5: Rename and Create ZIP (10 minutes)
+===========================================
+
+1. Close all open files from the folder
+
+2. Rename the folder:
+   From: "Final Assignment"
+   To: "Jenkins_CICD_YourName"
+   
+   Example: "Jenkins_CICD_RahulSharma"
+
+3. Create ZIP file:
+   
+   METHOD 1 - Right-click (easiest):
+   - Right-click the renamed folder
+   - Click "Send to" → "Compressed (zipped) folder"
+   
+   METHOD 2 - PowerShell:
+   Open PowerShell in Desktop\DevOps folder
+   Run:
+   Compress-Archive -Path "Jenkins_CICD_YourName" -DestinationPath "Jenkins_CICD_YourName.zip"
+
+4. Verify ZIP file:
+   - Extract it to a test location
+   - Make sure all files are present
+   - Check screenshots are viewable
+   - Verify file size (should be under 50MB)
+
+
+TASK 6: Submit (5 minutes)
+===========================
+
+1. Go to your assignment submission portal
+
+2. Upload the ZIP file: Jenkins_CICD_YourName.zip
+
+3. In the submission form, also provide:
+   - Flask GitHub URL: https://github.com/your_username/flask-backend
+   - Express GitHub URL: https://github.com/your_username/express-frontend
+   - EC2 Public IP: 65.1.100.135 (if asked)
+
+4. Click Submit
+
+5. Wait for confirmation
+
+
+TASK 7: Post-Submission (Important!)
+=====================================
+
+⚠️ DO NOT STOP YOUR EC2 INSTANCE!
+
+Keep it running for at least 2-3 days so your tutor can verify:
+- Applications are accessible
+- Pipelines work
+- Automatic deployment functions
+
+⚠️ Keep GitHub repositories PUBLIC or accessible to tutors
+
+⚠️ Monitor your email for any feedback from tutors
+
+================================================================================
+QUICK CHECKLIST
+================================================================================
+
+□ All 28+ screenshots in screenshots/ folder
+□ Your name in SUBMISSION_DOCUMENT.md
+□ EC2 Instance ID in SUBMISSION_DOCUMENT.md
+□ All YOUR_USERNAME replaced with actual username
+□ Challenges section filled in SUBMISSION_DOCUMENT.md
+□ GitHub URLs updated in README.md
+□ Tested all URLs work (Flask, Express, Jenkins)
+□ Tested PM2 status (both apps online)
+□ Folder renamed to Jenkins_CICD_YourName
+□ ZIP file created
+□ ZIP file tested (extracted and verified)
+□ Submitted on portal
+□ GitHub repos are public/accessible
+□ EC2 instance is still running
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+Problem: Can't find screenshots folder
+Solution: Create it manually: New Folder → "screenshots"
+
+Problem: ZIP file too large (>50MB)
+Solution: Make sure you're NOT including:
+   - node_modules/ folder
+   - venv/ folder
+   - .git/ folders
+
+Problem: Can't access applications
+Solution: 
+   1. SSH to EC2: ssh -i jenkins-cicd-key.pem ubuntu@65.1.100.135
+   2. Check PM2: pm2 status
+   3. Restart if needed: pm2 restart all
+
+Problem: Jenkins build fails
+Solution:
+   1. Check Console Output in Jenkins
+   2. Verify GitHub URLs are correct
+   3. Check EC2 disk space: df -h
+
+================================================================================
+TIME ESTIMATE
+================================================================================
+
+Task 1: Screenshots         - 15 min
+Task 2: Documentation       - 20 min
+Task 3: Update URLs         - 5 min
+Task 4: Final Testing       - 10 min
+Task 5: Create ZIP          - 10 min
+Task 6: Submit              - 5 min
+
+TOTAL: ~65 minutes (about 1 hour)
+
+================================================================================
+YOU'RE ALMOST DONE!
+================================================================================
+
+The hard technical work is COMPLETE! ✅
+
+All that's left is:
+- Organizing screenshots
+- Filling in your personal details
+- Creating the ZIP file
+- Submitting
+
+You can finish this in about 1 hour!
+
+Good luck with your submission! 🚀
+
+================================================================================
+IMPORTANT FILES REFERENCE
+================================================================================
+
+SUBMISSION_DOCUMENT.md    - Main document for submission (EDIT THIS!)
+README.md                 - Project documentation (update GitHub URLs)
+COMMANDS_REFERENCE.txt    - All commands you used
+FINAL_CHECKLIST.txt       - Complete checklist of everything
+WHAT_TO_DO_NOW.txt        - This file
+
+Flask Backend:  ~/apps/flask-backend (on EC2)
+Express Frontend: ~/apps/express-frontend (on EC2)
+
+EC2 IP: 65.1.100.135
+SSH: ssh -i jenkins-cicd-key.pem ubuntu@65.1.100.135
+
+================================================================================
